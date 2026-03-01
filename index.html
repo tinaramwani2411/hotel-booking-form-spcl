@@ -15,7 +15,8 @@
 
     <div class="container">
         <div class="booking-card">
-            <h2>Hotel Booking Form</h2>
+            <h2 class="hotel-title">Godwin Hotel</h2>
+            <p class="subtitle">Luxury Stay Booking</p>
 
             <form id="bookingForm">
 
@@ -33,7 +34,9 @@
 
                 <!-- Room Type -->
                 <div class="form-group">
-                    <label for="roomType">Room Type</label>
+                    <label for="roomType">Room Type
+                    <span class="info" title="Select the type of room based on your comfort preference.">ℹ️</span>
+                    </label>
                     <select id="roomType" name="roomType" required>
                         <option value="">-- Select Room Type --</option>
                         <option value="single">Single Room</option>
@@ -50,7 +53,10 @@
 
                 <!-- Special Requests -->
                 <div class="form-group">
-                    <label for="requests">Special Requests (Optional)</label>
+                    <label for="requests">
+                       Special Requests 
+                      <span class="info" title="Mention early check-in, extra bed, airport pickup, etc.">ℹ️</span>
+                    </label>
                     <textarea id="requests" name="requests" rows="4" placeholder="Any special requests..."></textarea>
                 </div>
 
@@ -58,10 +64,10 @@
                 <div class="form-group">
                     <button type="submit" class="btn">Book Now</button>
                 </div>
-
+                <p id="errorMsg" style="text-align:center; margin-top:10px;"></p>
             </form>
         </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
