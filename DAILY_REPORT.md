@@ -38,3 +38,19 @@ Enhanced UI with background image, glass effect, gold theme, and animations.
 🔜 Next Plan:
 
 Add booking summary and improve dynamic interactivity.
+
+📅 Day 03 Progress Report
+
+Date: 04/03/2026
+In Time: 9:00 AM
+Out Time: 11:00 AM
+Name: Tina Ramwani
+College: Saraswati College, Shegaon
+
+✅ Progress Summary:
+
+Improved and fixed UI issues in the booking form (dropdown styling & visibility).
+
+Implemented automatic room price calculation using JavaScript.
+
+Successfully deployed the project on Netlify for live hosting.
