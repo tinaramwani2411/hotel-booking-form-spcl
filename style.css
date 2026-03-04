@@ -9,7 +9,7 @@
 }
 
 /* ========================= */
-/* Background Image */
+/* Background */
 /* ========================= */
 
 body {
@@ -18,7 +18,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: url("bg_img.jpg") no-repeat center center/cover;
     position: relative;
 }
@@ -42,8 +41,9 @@ body::before {
     width: 100%;
     padding: 20px;
 }
+
 /* ========================= */
-/* Fade In Animation */
+/* Animations */
 /* ========================= */
 
 @keyframes fadeSlideUp {
@@ -56,47 +56,33 @@ body::before {
         transform: translateY(0);
     }
 }
-/* ========================= */
-/* Floating Animation */
-/* ========================= */
 
 @keyframes floatCard {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
 }
 
-.booking-card {
-    animation: fadeSlideUp 1s ease forwards, floatCard 6s ease-in-out infinite;
-}
 /* ========================= */
 /* Booking Card */
 /* ========================= */
 
 .booking-card {
-    animation: fadeSlideUp 1s ease forwards;
+    animation: fadeSlideUp 1s ease forwards, floatCard 6s ease-in-out infinite;
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     max-width: 500px;
     margin: auto;
     padding: 30px;
     border-radius: 15px;
-
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.4),
-            0 15px 40px rgba(0, 0, 0, 0.6);
+                0 15px 40px rgba(0, 0, 0, 0.6);
     color: #ffffff;
 }
 
 /* ========================= */
-/* Hotel Title Styling */
+/* Title Styling */
 /* ========================= */
 
 .hotel-title {
@@ -129,7 +115,6 @@ body::before {
     flex-direction: column;
 }
 
-/* Labels */
 label {
     margin-bottom: 6px;
     font-size: 14px;
@@ -137,10 +122,13 @@ label {
     color: #e0e0e0;
 }
 
-/* Inputs */
+/* ========================= */
+/* Inputs & Textareas */
+/* ========================= */
+
 input,
-select,
-textarea {
+textarea,
+select {
     padding: 10px 12px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -150,19 +138,51 @@ textarea {
     transition: all 0.3s ease;
 }
 
-/* Placeholder */
 input::placeholder,
 textarea::placeholder {
     color: #ccc;
 }
 
-/* Focus Effect */
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: #667eea;
+    border-color: gold;
     outline: none;
-    box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* ========================= */
+/* Select Styling */
+/* ========================= */
+
+/* Wrap select inside .select-wrapper in HTML */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Custom Arrow only for select */
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: gold;
+    pointer-events: none;
+}
+
+/* Dropdown options */
+select option {
+    background-color: #ffd700;
+    color: #000;
 }
 
 /* ========================= */
@@ -174,7 +194,7 @@ textarea:focus {
     border: none;
     border-radius: 6px;
     background: linear-gradient(90deg, gold, #f8d210);
-    color: #000; /* 👈 Black Text */
+    color: #000;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -188,7 +208,7 @@ textarea:focus {
 }
 
 /* ========================= */
-/* Info Icon Styling */
+/* Info Icon */
 /* ========================= */
 
 .info {
@@ -198,11 +218,11 @@ textarea:focus {
 }
 
 .info:hover {
-    color: #667eea;
+    color: gold;
 }
 
 /* ========================= */
-/* Responsive Design */
+/* Responsive */
 /* ========================= */
 
 @media (max-width: 600px) {
@@ -210,7 +230,7 @@ textarea:focus {
         padding: 20px;
     }
 
-    .booking-card h2 {
-        font-size: 20px;
+    .hotel-title {
+        font-size: 22px;
     }
 }

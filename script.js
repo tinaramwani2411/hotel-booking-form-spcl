@@ -25,6 +25,52 @@ document.addEventListener("DOMContentLoaded", function () {
         checkout.value = "";
         checkout.setAttribute("min", checkin.value);
     });
+    // ===============================
+// Room Prices
+// ===============================
+
+const roomPrices = {
+    single: 2000,
+    double: 3500,
+    suite: 5000
+};
+
+const roomType = document.getElementById("roomType");
+const totalPrice = document.getElementById("totalPrice");
+
+// ===============================
+// Calculate Total Price
+// ===============================
+
+function calculatePrice() {
+
+    if (!checkin.value || !checkout.value || !roomType.value) {
+        totalPrice.value = "₹0";
+        return;
+    }
+
+    const checkinDate = new Date(checkin.value);
+    const checkoutDate = new Date(checkout.value);
+
+    const timeDifference = checkoutDate - checkinDate;
+    const nights = timeDifference / (1000 * 60 * 60 * 24);
+
+    if (nights > 0) {
+        const pricePerNight = roomPrices[roomType.value];
+        const total = nights * pricePerNight;
+        totalPrice.value = "₹" + total;
+    } else {
+        totalPrice.value = "₹0";
+    }
+}
+
+// ===============================
+// Event Listeners
+// ===============================
+
+roomType.addEventListener("change", calculatePrice);
+checkin.addEventListener("change", calculatePrice);
+checkout.addEventListener("change", calculatePrice);
 
     // ===============================
     // ===============================
